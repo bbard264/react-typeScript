@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.scss';
+import { ConfigProvider } from 'antd';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MyHeader from './components/MyHeader';
+import LayoutStyle from './components/LayoutStyle';
+import FormPage from './components/FormPage';
+import Home from './components/Home';
+import { Provider } from 'react-redux';
+import store from './redux/store'; // Import your Redux store
+import './i18n';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <Provider store={store}>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#ffa200',
+              borderRadius: 10,
+              controlItemBgHover: '#ffa200',
+            },
+            components: {
+              Layout: {
+                headerBg: '#6eda78',
+              },
+            },
+          }}
+        >
+          <MyHeader />
+          <Routes>
+            <Route path={'/'} key={'/'} element={<Home />} />
+            <Route
+              path={'/layoutStyle'}
+              key={'/layoutStyle'}
+              element={<LayoutStyle />}
+            />
+            <Route path={'/myForm'} key={'/myForm'} element={<FormPage />} />
+          </Routes>
+        </ConfigProvider>
+      </Provider>
+    </BrowserRouter>
+  );
 }
-
-export default App

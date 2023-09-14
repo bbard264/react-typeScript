@@ -1,0 +1,76 @@
+// Define a mixin for the parent container
+$shapeBackgroundColor: #ffa200;
+$functionBgColor: #6eda78;
+$shapeSize: 5rem;
+@mixin shape-container {
+  height: $shapeSize;
+  width: $shapeSize;
+  background-color: $shapeBackgroundColor;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+
+  &.left {
+    border-top: $shapeSize/2 solid transparent;
+    border-bottom: $shapeSize/2 solid transparent;
+    border-right: $shapeSize solid $functionBgColor;
+  }
+  &.right {
+    border-top: $shapeSize/2 solid transparent;
+    border-bottom: $shapeSize/2 solid transparent;
+    border-left: $shapeSize solid $functionBgColor;
+  }
+  &.up {
+    border-left: $shapeSize/2 solid transparent;
+    border-right: $shapeSize/2 solid transparent;
+    border-bottom: $shapeSize solid $functionBgColor;
+  }
+  &.down {
+    border-left: $shapeSize/2 solid transparent;
+    border-right: $shapeSize/2 solid transparent;
+    border-top: $shapeSize solid $functionBgColor;
+  }
+}
+
+// Define the shapes using SCSS
+.square {
+  @include shape-container;
+}
+
+.circle {
+  @include shape-container;
+  border-radius: 50%;
+}
+
+.oval {
+  @include shape-container;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.trapezoid {
+  @include shape-container;
+  background-color: transparent;
+  height: 0;
+  width: 100%;
+  border-bottom: $shapeSize solid $shapeBackgroundColor;
+  border-left: $shapeSize/3 solid transparent;
+  border-right: $shapeSize/3 solid transparent;
+}
+
+.rectangle {
+  @include shape-container;
+  width: 75%;
+  height: 100%;
+}
+
+.parallelogram {
+  @include shape-container;
+  width: 75%;
+  height: 100%;
+  transform: skew(20deg); // Apply skew to create a parallelogram
+}
