@@ -1,5 +1,3 @@
-# react-typeScript
-
 # Project Name: react-typescript
 
 ## Description
