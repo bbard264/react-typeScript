@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Space, Divider, Row, Col, Button, Card, Tooltip } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';

@@ -22,7 +22,7 @@ const userDataSlice = createSlice({
     removeUserData: (state, action: PayloadAction<string[]>) => {
       const user_idsToRemove = action.payload;
       user_idsToRemove.forEach((user_id) => {
-        Storage.remove(user_id); // Remove the data from local storage
+        Storage.remove([user_id]);
       });
       return state.filter((data) => !user_idsToRemove.includes(data.user_id));
     },

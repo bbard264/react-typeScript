@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Row, Space } from 'antd';
 import { useTranslation } from 'react-i18next';

@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.scss';
 import { ConfigProvider } from 'antd';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
