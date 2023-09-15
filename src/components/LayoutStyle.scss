@@ -13,23 +13,23 @@ $shapeSize: 5rem;
   height: 0;
 
   &.left {
-    border-top: $shapeSize/2 solid transparent;
-    border-bottom: $shapeSize/2 solid transparent;
+    border-top: calc($shapeSize/2) solid transparent;
+    border-bottom: calc($shapeSize/2) solid transparent;
     border-right: $shapeSize solid $functionBgColor;
   }
   &.right {
-    border-top: $shapeSize/2 solid transparent;
-    border-bottom: $shapeSize/2 solid transparent;
+    border-top: calc($shapeSize/2) solid transparent;
+    border-bottom: calc($shapeSize/2) solid transparent;
     border-left: $shapeSize solid $functionBgColor;
   }
   &.up {
-    border-left: $shapeSize/2 solid transparent;
-    border-right: $shapeSize/2 solid transparent;
+    border-left: calc($shapeSize/2) solid transparent;
+    border-right: calc($shapeSize/2) solid transparent;
     border-bottom: $shapeSize solid $functionBgColor;
   }
   &.down {
-    border-left: $shapeSize/2 solid transparent;
-    border-right: $shapeSize/2 solid transparent;
+    border-left: calc($shapeSize/2) solid transparent;
+    border-right: calc($shapeSize/2) solid transparent;
     border-top: $shapeSize solid $functionBgColor;
   }
 }
@@ -58,8 +58,8 @@ $shapeSize: 5rem;
   height: 0;
   width: 100%;
   border-bottom: $shapeSize solid $shapeBackgroundColor;
-  border-left: $shapeSize/3 solid transparent;
-  border-right: $shapeSize/3 solid transparent;
+  border-left: calc($shapeSize/3) solid transparent;
+  border-right: calc($shapeSize/3) solid transparent;
 }
 
 .rectangle {
